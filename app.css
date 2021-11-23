@@ -61,6 +61,7 @@ pre {
 }
 
 .actions {
+  margin-top: 1rem;
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -71,6 +72,11 @@ pre {
   color: #fff;
   padding: 0.5rem;
   background-color: transparent;
+}
+
+.calendar caption {
+  color: #fff;
+  margin-bottom: 1rem;
 }
 
 .js-calendar table {
