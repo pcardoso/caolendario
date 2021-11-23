@@ -34,6 +34,9 @@ body {
   position: absolute;
   top: 3rem;
   left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 pre {
@@ -61,7 +64,6 @@ pre {
 }
 
 .actions {
-  margin-top: 1rem;
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -76,7 +78,7 @@ pre {
 
 .calendar caption {
   color: #fff;
-  margin-bottom: 1rem;
+  display: block;
 }
 
 .js-calendar table {

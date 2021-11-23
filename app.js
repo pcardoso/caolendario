@@ -119,11 +119,11 @@ export function getCalendar(year, month) {
   }
 
   return html`
+    <caption>
+      ${monthNames[thedate.getMonth()]} ${thedate.getFullYear()}
+    </caption>
     <div class="js-calendar">
       <table class="month">
-        <caption>
-          <div>${monthNames[thedate.getMonth()]} ${thedate.getFullYear()}</div>
-        </caption>
         <tbody>
           <tr>
             ${weekDays.map((d) => html`<th>${d}</th`)}
