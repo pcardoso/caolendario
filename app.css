@@ -1,0 +1,101 @@
+body {
+  font-family: sans-serif;
+  background: #444 url(richard-brutyo-Sg3XwuEpybU-unsplash.jpg) no-repeat center
+    center;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  color: #222;
+  animation-duration: 10s;
+  animation-name: wobble;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes wobble {
+  from {
+    background-size: 100%;
+  }
+
+  to {
+    background-size: 120%;
+  }
+}
+
+.bg {
+  backdrop-filter: blur(2px) brightness(60%);
+}
+
+.calendar {
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
+}
+
+pre {
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+.credits {
+  padding: 1rem;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.credits a {
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.actions button {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5rem;
+  background-color: transparent;
+}
+
+.js-calendar table {
+  border-collapse: collapse;
+}
+
+.js-calendar th,
+.js-calendar td {
+  border: 1px solid #fff;
+  padding: 5px;
+  margin: 0;
+  color: #fff;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.js-calendar th {
+  background-color: #fff;
+  color: #333;
+}
+
+.js-calendar .weekend {
+  color: #aaa;
+}
+
+.js-calendar .today {
+  background-color: blue;
+}

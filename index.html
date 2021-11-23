@@ -1,85 +1,45 @@
-<!-- <script src="https://unpkg.com/petite-vue" defer init></script> -->
-<!-- anywhere on the page -->
-<!-- <div v-scope="{ count: 0 }">
-  {{ count }}
-  <button @click="count++">inc</button>
-</div> -->
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cãolendário</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background: #444 url(richard-brutyo-Sg3XwuEpybU-unsplash.jpg) no-repeat center center;
-            background-size: cover;
-            padding: 0;
-            margin: 0;
-            color: #222;
-        }
-        
-        .calendar {
-            background: rgba(255, 255, 255, 0.4);
-            padding: 1rem;
-            border-radius: 5px;
-            font-size: 2rem;
-            position: absolute;
-            top: 3rem;
-            left: 1rem;
-        }
-        
-        pre {
-            margin: 0;
-        }
-        
-        .title {
-            background: rgba(255, 255, 255, 0.4);
-            margin: 0;
-            font-size: 2rem;
-            text-align: center;
-        }
-        
-        .credits {
-            background: rgba(255, 255, 255, 0.4);
-            padding: 1rem;
-            border-radius: 5px;
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
 
-<body>
-    <p class="title">Cãolendário</p>
+  <body>
+    <p class="bg title">Cãolendário</p>
 
-    <div class="calendar">
-        <pre>
-    Novembro 2021
-2ª 3ª 4ª 5ª 6ª Sa Do
- 1  2  3  4  5  6
- 7  8  9 10 11 12 13
-14 15 16 17 18 19 20
-21 22 23 24 25 26 27
-28 29 30</pre
-      >
+    <div class="bg calendar">
+      <div id="app"></div>
     </div>
 
-    <p class="credits">
-      Photo by
-      <a
-        href="https://unsplash.com/@richardbrutyo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-        >Richard Brutyo</a
-      >
-      on
-      <a
-        href="https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-        >Unsplash</a
-      >
+    <p class="bg credits">
+      <a href="./credits.md">Créditos</a>
     </p>
+
+    <script type="module">
+      import {
+        html,
+        render,
+      } from "https://unpkg.com/htm/preact/index.mjs?module";
+      import { getCalendar } from "./app.js";
+
+      function App(props) {
+        return html`${getCalendar(props.year, props.month)}
+          <div class="actions">
+            <button>Anterior</button>
+            <button>Seguinte</button>
+          </div>`;
+      }
+
+      const year = 2021;
+      const month = 11;
+      render(
+        html`<${App} year=${year} month=${month} />`,
+        document.getElementById("app")
+      );
+    </script>
   </body>
 </html>
