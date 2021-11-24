@@ -47,7 +47,10 @@ var monthNames = [
   "Dez",
 ];
 
-export function getCalendar(year, month) {
+export function getCalendar(date) {
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+
   var totalFeb = calcFebDays(month, year);
 
   var totalDays = [31, totalFeb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

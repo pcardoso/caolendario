@@ -22,20 +22,33 @@
         html,
         render,
       } from "https://unpkg.com/htm/preact/index.mjs?module";
+      // import { h, render } from "https://unpkg.com/preact@latest?module";
+      import { useState } from "https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module";
+
       import { getCalendar } from "./app.js";
 
       function App(props) {
-        return html`${getCalendar(props.year, props.month)}
+        const [date, setDate] = useState(props.startDate);
+
+        return html`${getCalendar(date)}
           <div class="actions">
-            <button>Anterior</button>
-            <button>Seguinte</button>
+            <button
+              onClick=${() =>
+                setDate(new Date(date.setMonth(date.getMonth() - 1)))}
+            >
+              Anterior
+            </button>
+            <button
+              onClick=${() =>
+                setDate(new Date(date.setMonth(date.getMonth() + 1)))}
+            >
+              Seguinte
+            </button>
           </div>`;
       }
 
-      const year = 2021;
-      const month = 11;
       render(
-        html`<${App} year=${year} month=${month} />`,
+        html`<${App} startDate=${new Date()} />`,
         document.getElementById("app")
       );
     </script>

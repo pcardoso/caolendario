@@ -72,9 +72,19 @@ pre {
 
 .actions button {
   border: 1px solid #fff;
-  color: #fff;
   padding: 0.5rem;
+  color: #fff;
   background-color: transparent;
+  border-radius: 5px;
+}
+
+.actions button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.actions button:active {
+  background-color: #aaa;
 }
 
 .calendar caption {
@@ -106,5 +116,6 @@ pre {
 }
 
 .js-calendar .today {
-  background-color: blue;
+  background-color: #fff;
+  color: #333;
 }
