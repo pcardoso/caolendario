@@ -25,6 +25,7 @@ body {
 
 .bg {
   backdrop-filter: blur(2px) brightness(60%);
+  -webkit-backdrop-filter: blur(2px) brightness(60%);
 }
 
 .calendar {
