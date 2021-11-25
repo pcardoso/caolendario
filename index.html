@@ -37,7 +37,6 @@
         useEffect(async () => {
           const response = await fetch(dogUrl);
           const json = await response.json();
-          console.log(json.message);
           document.body.style.backgroundImage = `url(${json.message})`;
         }, [date]);
 

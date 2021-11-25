@@ -4,23 +4,25 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  resize: both;
+
   padding: 0;
   margin: 0;
   color: #222;
-  animation-duration: 10s;
+  /* animation-duration: 10s;
   animation-name: wobble;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-direction: alternate;
+  animation-direction: alternate; */
 }
 
 @keyframes wobble {
   from {
-    background-size: 100%;
+    background-position: center center;
   }
 
   to {
-    background-size: 120%;
+    background-position: 105% 105%;
   }
 }
 
