@@ -1,7 +1,8 @@
 body {
   font-family: sans-serif;
-  background: #444 url(richard-brutyo-Sg3XwuEpybU-unsplash.jpg) no-repeat center
-    center;
+  background-color: #444;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   padding: 0;
   margin: 0;
@@ -46,7 +47,7 @@ pre {
 
 .title {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.5rem 0;
   text-align: center;
   color: #fff;

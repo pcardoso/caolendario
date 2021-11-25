@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <p class="bg title">Cãolendário</p>
+    <p class="bg title">🐶 Cãolendário</p>
 
     <div class="bg calendar" id="app"></div>
 
@@ -22,13 +22,24 @@
         html,
         render,
       } from "https://unpkg.com/htm/preact/index.mjs?module";
-      // import { h, render } from "https://unpkg.com/preact@latest?module";
-      import { useState } from "https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module";
+      import {
+        useState,
+        useEffect,
+      } from "https://unpkg.com/preact@latest/hooks/dist/hooks.module.js?module";
 
       import { getCalendar } from "./app.js";
 
+      const dogUrl = "https://dog.ceo/api/breeds/image/random";
+
       function App(props) {
         const [date, setDate] = useState(props.startDate);
+
+        useEffect(async () => {
+          const response = await fetch(dogUrl);
+          const json = await response.json();
+          console.log(json.message);
+          document.body.style.backgroundImage = `url(${json.message})`;
+        }, [date]);
 
         return html`${getCalendar(date)}
           <div class="actions">
